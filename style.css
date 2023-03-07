@@ -1,0 +1,259 @@
+@import url("https://fonts.googleapis.com/css2?family=Comforter&family=Poppins:wght@200&display=swap");
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-family: "Poppins", sans-serif;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Card active */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(270deg, #1cb4e1, #1c52fd);
+  background-size: 400% 400%;
+
+  -webkit-animation: AnimationName 8s ease infinite;
+  -moz-animation: AnimationName 8s ease infinite;
+  animation: AnimationName 8s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@-moz-keyframes AnimationName {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes AnimationName {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.card {
+  height: 500px;
+  width: 400px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  transition: height 400ms ease-in;
+}
+.card_header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 150px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.card_header img {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  align-self: center;
+}
+.card_header div {
+  align-self: center;
+}
+.card_header div h4 {
+  font-size: 1.7em;
+  font-weight: bold;
+}
+.card_header div h6 {
+  color: #959595;
+}
+.card_content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  background-attachment: fixed;
+  background-size: cover;
+  transition: height 400ms ease-in;
+}
+.card_list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 150px;
+  width: 150px;
+  opacity: 1;
+  transition: opacity 800ms ease-in;
+}
+.card_list_item a {
+  text-decoration: none;
+  color: #252525;
+}
+.card_footer {
+  display: flex;
+  justify-content: center;
+  transition: 400ms ease-in;
+}
+.card_footer button {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+/* Card inactive */
+.card.active {
+  height: 200px;
+  transition: height 400ms ease-in;
+}
+.card_content.active {
+  height: 0px;
+  overflow: hidden;
+  transition: height 400ms ease-in;
+}
+.card_list.active {
+  opacity: 0;
+  transition: opacity 600ms ease-in;
+}
+.card_footer.active button {
+  cursor: pointer;
+  transform: rotate(-180deg);
+  transition: transform 400ms ease-in;
+}
