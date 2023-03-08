@@ -188,12 +188,15 @@ table {
   justify-content: space-around;
   height: 150px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  transition: 400ms ease-in;
 }
-.card_header img {
+.card_header_image {
   height: 100px;
   width: 100px;
   border-radius: 50%;
   align-self: center;
+  opacity: 1;
+  transition: opacity 1s ease-in;
 }
 .card_header div {
   align-self: center;
@@ -204,6 +207,9 @@ table {
 }
 .card_header div h6 {
   color: #959595;
+}
+.card_header_user {
+  text-align: left;
 }
 .card_content {
   display: flex;
@@ -243,6 +249,19 @@ table {
   height: 200px;
   transition: height 400ms ease-in;
 }
+.card_header.active {
+  flex-direction: column;
+  transition: 400ms ease-in;
+}
+.card_header_image.active {
+  height: 0px;
+  width: 0px;
+  opacity: 0;
+  transition: opacity 1s ease-in;
+}
+.card_header_user.active  {
+  text-align: center;
+}
 .card_content.active {
   height: 0px;
   overflow: hidden;
@@ -257,3 +276,47 @@ table {
   transform: rotate(-180deg);
   transition: transform 400ms ease-in;
 }
+
+
+/* Style Popup */
+.popup {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #fff;
+  height: 500px;
+  width: 85%;
+  padding: 0.5em;
+  border-radius: 1em;
+}
+
+.popup header {
+  display: flex;
+  padding: 1em;
+  justify-content: flex-end;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.popup header svg {
+  cursor: pointer;
+  transition: all 250ms ease-in;
+}
+
+.popup header svg:hover {
+  background-color: #d7d7d7;
+  border-radius: 100%;
+  margin-left: 5px;
+  transition: all 250ms ease-in;
+}
+
+.popup section h3, .popup section p, .popup footer { text-align: center; }
+.popup section h3 { font-size: 2em; }
+.popup section p { line-height: 2em; }
+.popup footer { height: 4em; }
+
+.popup footer button {
+  padding: 1em;
+  border-radius: 4em;
+  border: 0;
+}
+
